@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MANIPULACION DEL DOM</title>
+
+    <style>
+
+        .titulo {
+            background-color: lightblue;
+            border-radius: 10px;
+            padding: 10px;
+            margin-top: 10px;
+            font-family: cursive;
+            text-align: center;
+        }
+
+    </style>
+
+
+</head>
+<body>
+
+    <h1 id="titulo" class="titulo">Hola Mundo</h1>
+
+    <p class="titulo"> CHAO </p>
+
+    <script>
+
+        var mitop = 100;
+
+        document.onkeydown =  function(e){
+
+            //console.log(e.key, e.keyCode);
+
+            if(e.keyCode == 38){
+                console.log("ARRIBA!!!!");
+
+                mitop -= 100;
+
+                document.getElementById("titulo").style.marginTop = mitop + "px";
+            
+            }else if(e.keyCode == 40){
+                console.log("ABAJO!!!!");
+
+                mitop += 100;
+
+                document.getElementById("titulo").style.marginTop = mitop + "px";
+            }
+
+        };
+
+
+
+        
+        document.getElementById("titulo").innerHTML = "FRANCISCO";
+
+        document.getElementById("titulo").style.marginTop = "50px";
+
+        var arreglodeTitulos = document.getElementsByClassName("titulo");
+
+        for (let x = 0; x < arreglodeTitulos.length; x++) {
+            console.log(arreglodeTitulos[x]);
+        }
+
+    </script>
+
+</body>
+</html>

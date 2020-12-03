@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RUT</title>
+    <script src="rut.js"></script>
+
+    <style>
+        img {
+            width: 200px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Calcular el Digito Verificador</h1>
+
+    <label>Ingresa tu RUT</label>
+    <input type="text" name="rut" id="rut">
+    <button id="btnCalcular">Calcular Digito</button>
+
+    <h3 id="resultado"></h3>
+
+
+    <img src="imagenes/622070_pacman.jpg" alt="Esto es una imagen del PACMAN.">
+
+
+
+    <script>
+        document.getElementById("btnCalcular").addEventListener("click", eventoClickBtnCalcular);
+
+        function eventoClickBtnCalcular() {
+
+            var rutIngresado = document.getElementById("rut").value;
+            var codigoVerificado = calcularDigitoVerificador(rutIngresado);
+
+            document.getElementById("resultado").innerHTML = " EL RUT COMPLETO ES: " + rutIngresado + "-" + codigoVerificado;
+
+        }
+    </script>
+
+</body>
+
+</html>
